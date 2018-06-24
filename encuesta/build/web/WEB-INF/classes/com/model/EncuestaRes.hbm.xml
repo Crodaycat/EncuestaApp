@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 24, 2018 4:41:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.model.EncuestaRes" table="encuesta_res" catalog="encuesta" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="programa" type="string">
+            <column name="programa" length="50" not-null="true" />
+        </property>
+        <property name="genero" type="string">
+            <column name="genero" length="6" not-null="true" />
+        </property>
+        <property name="edad" type="int">
+            <column name="edad" not-null="true" />
+        </property>
+        <property name="bebida" type="string">
+            <column name="bebida" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
