@@ -14,13 +14,67 @@
         </h:head>
 
         <h:body>
+
             <p:layout fullPage="true">
+                
+                <p:layoutUnit position="north" size="100" style="display: flex; justify-content: center; align-items: center;">
+                    <div style="float: left; display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+                        <h:link outcome="index" value="Incio" />
+                        <h:link outcome="administracion" value="Administración" rendered="#{loginBean.loged}" />
+                    </div>
+                    <div style="float: right; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                        <h:form rendered="#{!loginBean.loged}">
+                            <p:outputLabel value="Usuario: " />
+                            <p:inputText value="#{loginBean.user.nombre}" />
+                            <p:outputLabel value=" Contraseña: " />
+                            <p:password value="#{loginBean.user.password}" />
+                            <p:commandButton ajax="false" value="Ingresar" actionListener="#{loginBean.login()}" action="index.xhtml" />
+                        </h:form>
+                        <h:form rendered="#{loginBean.loged}">
+                            <p:outputLabel value="Bienvenido #{loginBean.user.nombre} " />
+                            <p:commandButton ajax="false" value="Salir" actionListener="#{loginBean.logout()}" action="index.xhtml" />
+                        </h:form>
+                    </div>
                 </p:layoutUnit>
+
                 <p:layoutUnit position="center" size="80">
+                    <p:growl id="mensajeGeneral" autoUpdate="true" showDetail="true" life="5000" />
+                    <h:form id="formInsertEncuesta">
+                        <p:panelGrid columns="2" style="margin: 0 auto">
+
+                            <p:outputLabel value="Género: " />
+                            <p:selectOneMenu value="#{encuestaResBean.result.genero}">
+                                <f:selectItems value="#{encuestaResBean.generos}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Programa académico: " />
+                            <p:selectOneMenu value="#{encuestaResBean.result.programa}">
+                                <f:selectItems value="#{encuestaResBean.programas}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Edad: " />
+                            <p:inputText id="edad" value="#{encuestaResBean.result.edad}" required="true" 
+                                         requiredMessage="El campos Edad es obligatorio y debe ser numerico." />
+
+
+                            <p:outputLabel value="Bebida: " />
+                            <p:selectOneMenu value="#{encuestaResBean.result.bebida}">
+                                <f:selectItems value="#{encuestaResBean.bebidas}" />
+                            </p:selectOneMenu>
+                        </p:panelGrid>
+                        <br></br>
+                        <div style="display: flex; justify-content: center;">
+                            <p:commandButton ajax="false" value="Enviar" actionListener="#{encuestaResBean.addEncuesta()}" action="index.xhtml" />
+                        </div>
+                    </h:form>
                 </p:layoutUnit>
+                
+                
+
             </p:layout>
 
         </h:body>
 
     </f:view>
 </html>
+

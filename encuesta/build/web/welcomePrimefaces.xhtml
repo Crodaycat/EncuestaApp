@@ -1,4 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -27,21 +28,24 @@
                     Footer
                 </p:layoutUnit>
 
-                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
-                    <p:menu>
-                        <p:submenu label="Resources">
-                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
-                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
-                        </p:submenu>
-
-                    </p:menu>
-                </p:layoutUnit>
-
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    <h:form id = "formShowResult">
+                        <p:dataTable id="tblShowResult" var="users" value="#{usuariosBean.list}"
+                                     emptyMessage="No hay datos registrados." >
+                            <p:column headerText="Id">
+                                <h:outputText value="#{users.id}"></h:outputText>
+                            </p:column>
+                            <p:column headerText="Usuario">
+                                <h:outputText value="#{users.nombre}"></h:outputText>
+                            </p:column>
+                            <p:column headerText="Contraseña">
+                                <h:outputText value="#{users.password}"></h:outputText>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                    
+                    <br></br>
+                    resultado total de encuesta: #{encuestaResBean.total}
                 </p:layoutUnit>
 
             </p:layout>
