@@ -14,4 +14,9 @@ import com.model.EncuestaRes;
  */
 public interface EncuestaResDao {
     public List<EncuestaRes> getAllEncuestaRes ();
+    public boolean add (EncuestaRes encuesta);
+    public long total ();
+    public long edadBebida ();
+    public String programaMenos();
+    public String proporcion();
 }
