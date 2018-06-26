@@ -3,16 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/web/index.xhtml</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/hibernate.reveng.xml</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/com/dao/EncuestaResDao.java</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/web/welcomePrimefaces.xhtml</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/com/dao/EncuestaResImp.java</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/web/WEB-INF/faces-config.xml</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/com/model/EncuestaRes.java</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/Usuario.java</file>
-            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/encuesta/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/src/java/com/dao/EncuestaResDao.java</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/src/java/com/dao/EncuestaResImp.java</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/src/java/com/bean/LoginBean.java</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/web/index.xhtml</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/src/java/com/bean/EncuestaResBean.java</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/web/welcomePrimefaces.xhtml</file>
+            <file>file:/C:/Users/luis_/OneDrive/Documents/NetBeansProjects/EncuestaApp/encuesta/web/administracion.xhtml</file>
         </group>
     </open-files>
 </project-private>

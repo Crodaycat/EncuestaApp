@@ -54,6 +54,12 @@ public class EncuestaResBean implements Serializable{
     
     public void addEncuesta () throws IOException {
         EncuestaResDao resDao = new EncuestaResImp();
+        
+        if (result.getEdad() <= 0 || result.getEdad() > 150) {
+            Messages.errorMensaje("No se completó el registro", "Ingresa un rango de edad válido");
+            result = new EncuestaRes();
+            return;
+        }
         if (getTotal() >= 10) {
             Messages.errorMensaje("No se completó el registro", "Ya se ha alcanzado el límite se registros para esta encuesta.");
         } else {

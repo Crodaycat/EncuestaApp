@@ -9,10 +9,12 @@ import com.dao.UsuariosDao;
 import com.dao.UsuariosImp;
 import com.model.Usuarios;
 import com.util.Messages;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -52,6 +54,13 @@ public class LoginBean implements Serializable{
 
     public boolean isLoged() {
         return loged;
+    }
+    
+    public void checkLogAndRedirect () throws IOException {
+        if (!loged) {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+            Messages.errorMensaje("No tienes permisos", "Debes estar logueado y tener permisos para acceder a este sito de la plataforma.");
+        }
     }
     
     

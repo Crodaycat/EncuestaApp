@@ -10,57 +10,58 @@
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>Administración</title>
+                <h:outputStylesheet library="css" name="style.css" />
             </f:facet>
         </h:head>
 
-        <h:body>
-
+        <h:body>          
+            
             <p:layout fullPage="true">
+                <p:layoutUnit position="center" size="100">
                 
-                <p:layoutUnit position="north" size="100" style="display: flex; justify-content: center; align-items: center;">
-                    <div style="float: left; display: flex; justify-content: center; align-items: center; margin-top: 30px;">
-                        <h:link outcome="index" value="Incio" />
-                        <h:link outcome="administracion" value="Administración" rendered="#{loginBean.loged}" />
+                    <div class="header">
+                        <div class="header-content">
+                            <div style="float: left; display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+                                <h:link outcome="index" value="Incio" />
+                                <h:link outcome="administracion" value="Administración" rendered="#{loginBean.loged}" />
+                            </div>
+                            <div style="float: right; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                                <h:form rendered="#{loginBean.loged}">
+                                    <p:outputLabel value="Bienvenido #{loginBean.user.nombre} " />
+                                    <p:commandButton ajax="false" value="Salir" actionListener="#{loginBean.logout()}" action="index.xhtml" />
+                                </h:form>
+                            </div>
+                        </div>
+                        #{loginBean.checkLogAndRedirect()}
                     </div>
-                    <div style="float: right; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-                        <h:form rendered="#{loginBean.loged}">
-                            <p:outputLabel value="Bienvenido #{loginBean.user.nombre} " />
-                            <p:commandButton ajax="false" value="Salir" actionListener="#{loginBean.logout()}" action="index.xhtml" />
-                        </h:form>
-                    </div>
-                </p:layoutUnit>
 
-                <p:layoutUnit position="center" size="80">
-                    <div>
-                        <div>
+                    <div class="content">
+                        <p:growl id="mensajeGeneral" autoUpdate="true" showDetail="true" life="5000" />
+                        <h:form id = "formShowResult" rendered="#{loginBean.loged}">
                             <div>Número de estudiantes encuestados: #{encuestaResBean.total}</div>
                             <div>Estudiantes entre 20 y 30 años, que prefieren la gaseosa: #{encuestaResBean.edadBebida}</div>
                             <div>Programa con menos encuestados: #{encuestaResBean.programaMenos()}</div>
                             <div>Proporción de hombres y mujeres que prefiere agua de panela: #{encuestaResBean.proporcion()}</div>
                             <br></br>
-                        </div>
-                        <div>
-                            <h:form id = "formShowResult">
-                                <p:dataTable id="tblShowResult" var="resultado" value="#{encuestaResBean.list}"
-                                             emptyMessage="No hay datos registrados." >
-                                    <p:column headerText="Id">
-                                        <h:outputText value="#{resultado.id}"></h:outputText>
-                                    </p:column>
-                                    <p:column headerText="Programa">
-                                        <h:outputText value="#{resultado.programa}"></h:outputText>
-                                    </p:column>
-                                    <p:column headerText="Género">
-                                        <h:outputText value="#{resultado.genero}"></h:outputText>
-                                    </p:column>
-                                    <p:column headerText="Edad">
-                                        <h:outputText value="#{resultado.edad}"></h:outputText>
-                                    </p:column>
-                                    <p:column headerText="Bebida">
-                                        <h:outputText value="#{resultado.bebida}"></h:outputText>
-                                    </p:column>
-                                </p:dataTable>
-                            </h:form>
-                        </div>
+                            <p:dataTable id="tblShowResult" var="resultado" value="#{encuestaResBean.list}"
+                                         emptyMessage="No hay datos registrados." >
+                                <p:column headerText="Id">
+                                    <h:outputText value="#{resultado.id}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="Programa">
+                                    <h:outputText value="#{resultado.programa}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="Género">
+                                    <h:outputText value="#{resultado.genero}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="Edad">
+                                    <h:outputText value="#{resultado.edad}"></h:outputText>
+                                </p:column>
+                                <p:column headerText="Bebida">
+                                    <h:outputText value="#{resultado.bebida}"></h:outputText>
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
                     </div>
                 </p:layoutUnit>
             </p:layout>
